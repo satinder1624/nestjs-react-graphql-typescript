@@ -1,0 +1,39 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Product {
+  _id: ID!
+  productName: String!
+  price: Float!
+  owner: String!
+}
+
+type Query {
+  products: [Product!]!
+  productByID(input: FindProductInput!): Product!
+}
+
+input FindProductInput {
+  _id: String!
+}
+
+type Mutation {
+  createProduct(input: CretaeProductInput!): Product!
+  updateProductByID(inputID: FindProductInput!, input: CretaeProductInput!): Product!
+  updateProductByID2(input: UpdateProductInput!): Product!
+  deleteProductByID(input: FindProductInput!): String!
+}
+
+input CretaeProductInput {
+  productName: String!
+  price: String!
+  owner: String!
+}
+
+input UpdateProductInput {
+  _id: ID!
+  productName: String
+  price: String
+  owner: String
+}
